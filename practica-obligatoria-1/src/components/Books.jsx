@@ -133,40 +133,37 @@ let watchList = [
 ];
 
 watchList.PropTypes = {
-    Title: PropTypes.string,
-    Year: PropTypes.string,
-    Rated: PropTypes.string,
-    Released: PropTypes.string,
-    Runtime: PropTypes.string,
-    Genre: PropTypes.string,
-    Director: PropTypes.string,
-    Writer: PropTypes.string,
-    Actors: PropTypes.string,
-    Plot: PropTypes.string,
-    Language: PropTypes.string,
-    Country: PropTypes.string,
-    Awards: PropTypes.string,
-    Poster: PropTypes.string,
-    Metascore: PropTypes.string,
-    imdbRating: PropTypes.string,
-    imdbVotes: PropTypes.string,
-    imdbID: PropTypes.string,
-    Type: PropTypes.string,
-    Response: PropTypes.string,
-  };
+	Title: PropTypes.string,
+	Year: PropTypes.string,
+	Rated: PropTypes.string,
+	Released: PropTypes.string,
+	Runtime: PropTypes.string,
+	Genre: PropTypes.string,
+	Director: PropTypes.string,
+	Writer: PropTypes.string,
+	Actors: PropTypes.string,
+	Plot: PropTypes.string,
+	Language: PropTypes.string,
+	Country: PropTypes.string,
+	Awards: PropTypes.string,
+	Poster: PropTypes.string,
+	Metascore: PropTypes.string,
+	imdbRating: PropTypes.string,
+	imdbVotes: PropTypes.string,
+	imdbID: PropTypes.string,
+	Type: PropTypes.string,
+	Response: PropTypes.string,
+};
 
-  const ReturnMovieTitle = () => {
+const ReturnMovieTitle = (watchList) => {
 	const moviesFiltered = watchList.filter((movie) => movie.Director === "Christopher Nolan" && parseFloat(movie.imdbRating) > 8.0).map((movie) => {
 		return { Title: movie.Title };
-	  }); 
-  
-	return (
-	  <div>
-		{moviesFiltered.map((movie, index) => (
-		  <p key={index}>{movie.Title}</p>
-		))}
-	  </div>
-	);
-  }
+	});
+
+	return moviesFiltered;
+}
+
+const titlesArray = ReturnMovieTitle(watchList);
+console.log(titlesArray);
 
 export default ReturnMovieTitle;
