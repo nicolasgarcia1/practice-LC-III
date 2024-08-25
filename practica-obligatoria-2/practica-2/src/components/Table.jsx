@@ -23,7 +23,7 @@ const Table = ({ netIncomes }) => {
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colSpan='2'>Ingresos promedio: ${averageIncome}</td>
+                        <p>Ingresos promedio: ${averageIncome}</p>
                     </tr>
                 </tfoot>
             </table>
