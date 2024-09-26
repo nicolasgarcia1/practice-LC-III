@@ -7,7 +7,7 @@ const Task = ({ addTask }) => {
         setDescription(event.target.value);
     };
 
-    const addTaskHandler = (task) => {
+    const addTaskHandler = () => {
         addTask({
             description,
             completed: false
